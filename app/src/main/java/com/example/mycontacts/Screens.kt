@@ -16,7 +16,7 @@ object Screens {
         ContactListFragment()
     }
 
-    fun ContactDetail(contactId: String) = FragmentScreen("Contact_$contactId") {
-        ContactDetailFragment(contactId)
+    fun ContactDetail(contactId: Int) = FragmentScreen("Contact_${contactId.toString()}") {
+        ContactDetailFragment.getNewInstance(contactId)
     }
 }

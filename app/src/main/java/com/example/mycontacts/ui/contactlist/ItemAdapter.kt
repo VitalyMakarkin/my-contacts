@@ -33,7 +33,7 @@ class ItemAdapter(private val dataset: List<Contact>) :
         holder.emailView.text = item.email
         holder.imageView.setImageResource(item.image)
         holder.itemView.setOnClickListener {
-            Log.v("ItemView", "position clicked: $position")
+            // TODO Navigate to Contact Detail with contactId
         }
     }
 

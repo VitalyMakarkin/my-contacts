@@ -10,12 +10,15 @@ import com.example.mycontacts.databinding.FragmentContactDetailBinding
 import com.github.terrakok.cicerone.Router
 import javax.inject.Inject
 
-class ContactDetailFragment(val contactId: String) : Fragment() {
+class ContactDetailFragment() : Fragment() {
     @Inject
     lateinit var contactDetailViewModel: ContactDetailViewModel
 
     @Inject
     lateinit var router: Router
+
+    val contactId: Int
+        get() = arguments!!.getInt(ARG_CONTACT)
 
     private var _binding: FragmentContactDetailBinding? = null
     private val binding get() = _binding!!
@@ -23,6 +26,8 @@ class ContactDetailFragment(val contactId: String) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         App.appComponent.inject(this)
+        // TODO: Pass contactId to contactDetailViewModel
+        // TODO: But it may not be in this method, because there is only one instance?
     }
 
     override fun onCreateView(
@@ -43,5 +48,13 @@ class ContactDetailFragment(val contactId: String) : Fragment() {
 
     companion object {
         private const val ARG_CONTACT = "arg_contact"
+
+        fun getNewInstance(contactId: Int): ContactDetailFragment {
+            return ContactDetailFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(ARG_CONTACT, contactId)
+                }
+            }
+        }
     }
 }
