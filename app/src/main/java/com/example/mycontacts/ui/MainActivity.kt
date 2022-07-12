@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mycontacts.App
 import com.example.mycontacts.R
-import com.example.mycontacts.Screens.ContactDetail
 import com.example.mycontacts.Screens.ContactList
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
@@ -43,9 +42,5 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         navigatorHolder.removeNavigator()
         super.onPause()
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 }
