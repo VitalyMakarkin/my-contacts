@@ -9,7 +9,7 @@ import com.example.mycontacts.App
 import com.example.mycontacts.databinding.FragmentContactDetailBinding
 import javax.inject.Inject
 
-class ContactDetailFragment() : Fragment() {
+class ContactDetailFragment : Fragment() {
     @Inject
     lateinit var contactDetailViewModel: ContactDetailViewModel
 

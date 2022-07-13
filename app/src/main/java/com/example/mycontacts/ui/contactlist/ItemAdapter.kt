@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mycontacts.R
 import com.example.mycontacts.model.Contact
 
-class ItemAdapter(
-    private val onContactClick: (Contact) -> Unit
-) :
+class ItemAdapter(private val onContactClick: (Contact) -> Unit) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     private var dataset: List<Contact> = emptyList()
@@ -21,7 +19,7 @@ class ItemAdapter(
         notifyDataSetChanged()
     }
 
-    inner class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val nameView: TextView = view.findViewById(R.id.contact_name)
         private val phoneView: TextView = view.findViewById(R.id.contact_phone)
         private val emailView: TextView = view.findViewById(R.id.contact_email)

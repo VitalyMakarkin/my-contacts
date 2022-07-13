@@ -7,7 +7,7 @@ import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Singleton
 
-class ContactDataSource(): ContactSource {
+class ContactDataSource : ContactSource {
     private val contacts: List<Contact> = listOf(
         Contact(0, "Max", "+7 (900) 444-44-00", "max@email.com", R.drawable.ic_contact_blue),
         Contact(1, "Ann", "+7 (900) 444-44-01", "ann@email.com", R.drawable.ic_contact_yellow),
