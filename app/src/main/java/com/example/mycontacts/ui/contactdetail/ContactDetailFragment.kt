@@ -34,7 +34,7 @@ class ContactDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         contactDetailViewModel.setContact(contactId)
-        with(contactDetailViewModel.contact) {
+        with(contactDetailViewModel.contact.value!!) {
             binding.contactName.text = name
             binding.contactPhone.text = "Phone: $phone"
             binding.contactEmail.text = "Email: $email"
